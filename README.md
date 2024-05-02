@@ -1,8 +1,6 @@
-# Radium 
 
 ## Scalable URL Shortner Project Requirement
 
-## Phase I
 
 ## Overview
 URL shortening is used to create shorter aliases for long URLs. We call these shortened aliases “short links.” Users are redirected to the original URL when they hit these short links. Short links save a lot of space when displayed, printed, messaged, or tweeted. Additionally, users are less likely to mistype shorter URLs.
@@ -37,28 +35,13 @@ If you haven’t used tinyurl.com before, please try creating a new shortened UR
 ```
 
 ### POST /url/shorten
-- Create a short URL for an original url recieved in the request body.
-- The baseUrl must be the application's baseUrl. Example if the originalUrl is http://abc.com/user/images/name/2 then the shortened url should be http://localhost:3000/xyz
-- Return the shortened unique url. Refer [this](#url-shorten-response) for the response
-- Ensure the same response is returned for an original url everytime
-- Return HTTP status 400 for an invalid request
+- Create a short URL for an original url received in the request body.
 
 ### GET /:urlCode
 - Redirect to the original URL corresponding
-- Use a valid HTTP status code meant for a redirection scenario.
-- Return a suitable error for a url not found
-- Return HTTP status 400 for an invalid request
 
-## Testing 
-- To test these apis create a new collection in Postman named Project 4 Url Shortner
-- Each api should have a new request in this collection
-- Each request in the collection should be rightly named. Eg  Url shorten, Get Url etc
-- Each member of each team should have their tests in running state
-
-## Phase II
-- Use caching while creating the shortened url to minimize db calls.
-- Implement what makes sense to you and we will build understanding over the demo discussion. 
-- Figure out if you can also use caching while redirecting to the original url from the shortedned url
+## Caching strategy for faster response and minimizing db calls ( Redis )
+- cached frequently used URLs for faster response and less db calls
 
 ## Response
 
